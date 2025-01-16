@@ -12,7 +12,7 @@ let albumNames = [];
 let audio = new Audio(`./Songs/ANTENNA/Yui - Again.mp3`);
 let currentFolder = "ANTENNA";
 
-let currentSong = "Jugnu.mp3";
+let currentSong = "Yui - Again.mp3";
 
 function secondsToMinutesSeconds(seconds) {
   const minutes = Math.floor(seconds / 60); // Calculate the number of full minutes
