@@ -34,7 +34,7 @@ async function main(currentFolder) {
 
 async function getSongsName(currentFolder) {
   try {
-    const response = await fetch(`/Songs/${currentFolder}`);
+    const response = await fetch(`./Songs/${currentFolder}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status ${response.status}`);
     }
@@ -273,7 +273,7 @@ document.querySelector(".volume > img").addEventListener("click", () => {
 });
 
 async function getAlbumNames() {
-  const response = await fetch(`/Songs`);
+  const response = await fetch(`./Songs`);
   if (!response.ok) {
     throw new Error(`HTTP error! Status ${response.status}`);
   }
