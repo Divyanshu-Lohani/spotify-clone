@@ -9,8 +9,8 @@ const seekBar = document.querySelector(".seekbar");
 
 let fileNames = [];
 let albumNames = [];
-let audio = new Audio(`./Songs/Your Library/Jugnu.mp3`);
-let currentFolder = "Your Library";
+let audio = new Audio(`./Songs/ANTENNA/Jugnu.mp3`);
+let currentFolder = "ANTENNA";
 
 let currentSong = "Jugnu.mp3";
 
@@ -335,7 +335,7 @@ let isInitialized = false;
 
 if (fileNames.length === 0 && !isInitialized) {
   isInitialized = true;
-  main("Your Library");
+  main("ANTENNA");
 }
 
 getAlbumNames();
@@ -346,6 +346,6 @@ document.querySelectorAll(".home, .logo").forEach((element) => {
     currentFolder = "";
     currentSong = ""; // Reset current song
 
-    main("Your Library");
+    main("ANTENNA");
   });
 });
