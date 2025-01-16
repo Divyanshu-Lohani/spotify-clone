@@ -1,0 +1,766 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Color of the track */
+    border-radius: 10px;
+    /* Optional: rounded corners for the track */
+}
+
+/* Target the draggable part (thumb) of the scrollbar */
+*::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+    border: none;
+    /* Optional: border around the thumb */
+}
+
+/* Target the scrollbar in the right-parent */
+*::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    /* Width of the vertical scrollbar */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Ensures full height alignment */
+    overflow: hidden;
+    /* Prevents horizontal scrolling */
+
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 70px;
+}
+
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.logo:hover,
+.home:hover,
+.search-bar:hover,
+.right-nav button {
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+.center-nav {
+    display: flex;
+    gap: 10px;
+    margin-left: 150px;
+    padding: 5px;
+}
+
+.home {
+    background-color: #1f1f1f;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease;
+
+}
+
+.home:hover {
+    transform: scale(1.05);
+}
+
+.home-icon {
+    background-color: transparent;
+    /* fill: transparent; */
+    /* Transparent interior */
+    /* stroke: #5d5c5c; */
+    /* Outline color */
+    /* stroke-width: 2px; */
+    /* Outline thickness */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1f1f1f;
+    border-radius: 40px;
+    padding: 0 15px;
+}
+
+.search-bar:hover {
+    background-color: #3e3e3e;
+}
+
+.search-bar:hover .grey-icon path {
+    filter: invert(0);
+    fill: #e6e3e3;
+}
+
+.grey-icon {
+    background-color: transparent;
+    fill: #5d5c5c;
+}
+
+.grey-icon:hover path {
+    filter: invert(0);
+    fill: #e6e3e3;
+}
+
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    vertical-align: center;
+    height: 30px;
+    font-size: 1rem;
+    width: 350px;
+    background-color: transparent;
+    color: white;
+}
+
+.search-bar input::placeholder {
+    color: rgb(155, 155, 155);
+}
+
+.library-icon {
+    border-left: 1px solid white;
+    padding-left: 15px;
+    background-color: transparent;
+    stroke-width: 2px;
+}
+
+.right-nav {
+    padding: 10px;
+}
+
+.grey-btn {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #b3b3b3;
+}
+
+.grey-btn:hover {
+    color: white;
+}
+
+.signup-btn {
+    font-size: 16px;
+    padding: 8px 32px 8px 8px;
+    transition: transfrom 0.3s ease;
+}
+
+.signup-btn:hover {
+    transform: scale(1.05);
+}
+
+.white-btn:hover {
+    transform: scale(1.05);
+}
+
+.login-btn {
+    font-size: 16px;
+    padding: 13px 33px;
+}
+
+.container-main {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 5px;
+    height: calc(100vh - 70px - 80px);
+    padding: 0 8px 8px 8px;
+    overflow: hidden;
+}
+
+.left-parent {
+    width: 28vw;
+    background-color: #121212;
+    border-radius: 10px;
+    height: calc(100vh - 70px - 80px - 8px);
+}
+
+.left-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: transparent;
+    padding: 10px 0px 0px;
+    height: calc(100vh - 70px - 80px - 8px);
+}
+
+.left-main * {
+    background-color: #121212;
+}
+
+.your-library-parent {
+    border-radius: 10px;
+}
+
+.your-library {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px 38px;
+}
+
+
+.your-library-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    fill: white
+}
+
+.your-library-left h4 {
+    color: white
+}
+
+.your-library-right {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.songs-playlist {
+    overflow-y: scroll;
+    height: calc(100vh - 70px - 80px - 8px - 85px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.songs-playlist li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 5px 20px 5px 25px;
+    padding: 15px 15px;
+    border: 1px solid white;
+    border-radius: 3px;
+    min-height: 20px;
+    flex-shrink: 0;
+}
+
+.songs-playlist li img {
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.playnow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+
+.right-parent {
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+    height: calc(90vh - 70px - 80px - 8px);
+    width: calc(70vw - 5px);
+    border-radius: 10px;
+    margin-left: auto;
+
+}
+
+.right-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #161616;
+    padding: 22px 20px 0 25px;
+}
+
+
+
+.right-main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #161616;
+
+}
+
+.right-main-container * {
+    background-color: #161616;
+}
+
+.right-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular-artist {
+    display: flex;
+
+}
+
+.artist-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-container {
+    padding: 10px 10px 30px 10px;
+    border-radius: 10px;
+}
+
+
+.hover-container:hover {
+    background-color: #1f1f1f;
+}
+
+.hover-container:hover .item,
+.hover-container:hover .img-comp,
+.hover-container:hover h4,
+.hover-container:hover p {
+    background-color: #1f1f1f;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item img {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.img-comp {
+    position: relative;
+}
+
+.hover-play {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 60%;
+    left: 60%;
+    z-index: 2;
+    background-color: #1ed760;
+    border-radius: 50%;
+    padding: 10px;
+    visibility: hidden;
+    /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s ease-in-out;
+    /* Smooth fade */
+}
+
+.hover-container:hover .hover-play {
+    visibility: visible;
+    opacity: 1;
+    /* Fade-in effect */
+}
+
+.hover-play:hover {
+    background-color: #3be477;
+    transform: scale(1.05);
+}
+
+.rectangle-artist-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-container:hover .rectangle {
+    background-color: #1f1f1f;
+}
+
+.rectangle {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cover-img {
+    object-fit: cover;
+    height: 150px;
+    border-radius: 5px;
+    width: 150px;
+
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+footer * {
+    background-color: black;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 5px 50px 10px 50px;
+    z-index: 3;
+}
+
+
+
+.footer-left {
+    display: flex;
+    width: 200px;
+}
+
+.footer-center {
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+}
+
+.footer-center .icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.seekbar {
+    width: 100%;
+    position: relative;
+    height: 4px;
+    border-radius: 10px;
+    background: white;
+    appearance: none;
+    /* Remove default styles */
+}
+
+.seekbar::-webkit-slider-thumb {
+    appearance: none;
+    /* Disables the default browser styling */
+    width: 12px;
+    /* Sets the width of the thumb to 12px */
+    height: 12px;
+    /* Sets the height of the thumb to 12px */
+    background: #1ed760;
+    /* Gives the thumb a blue color */
+    border-radius: 5px;
+
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 250px
+}
+
+.duration-volume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.duration {
+    width: 80px;
+}
+
+.volume {
+    display: flex;
+    /* Center the image within the container */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.volume img {
+    height: 20px;
+    /* Make image take full height of container */
+    object-fit: contain;
+    /* Maintain image aspect ratio */
+}
+
+.range {
+    height: 20px;
+}
+
+.vol-seekbar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 6px;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+.vol-seekbar::-webkit-slider-thumb {
+    appearance: none;
+    /* Disables the default browser styling */
+    width: 12px;
+    /* Sets the width of the thumb to 12px */
+    height: 12px;
+    /* Sets the height of the thumb to 12px */
+    background: #1ed760;
+    /* Gives the thumb a blue color */
+    border-radius: 5px;
+}
+
+
+.white-btn {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: none;
+    background-color: white;
+    border-radius: 30px;
+    transition: transfrom 0.3s ease;
+    color: black;
+}
+
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 5px;
+
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo-icon {
+        display: none;
+    }
+
+    .logo {
+        justify-content: center;
+        align-items: center;
+        padding-top: 3px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo img {
+        height: 20px;
+    }
+
+    .center-nav svg {
+        height: 20px;
+    }
+
+    .search-bar {
+        padding: 0px 15px;
+    }
+
+    .home {
+        height: 35px;
+        width: 35px;
+    }
+
+    .search-bar input {
+        width: 200px;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .library-icon {
+        display: none;
+    }
+
+    .center-nav {
+        display: flex;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .library-icon {
+        padding-left: 10px;
+    }
+
+    .right-nav {
+        padding: 5px;
+    }
+
+    .right-nav button {
+        font-size: 13px;
+    }
+
+    .signup-btn {
+        padding: 5px 5px;
+    }
+
+    .login-btn {
+        padding: 5px 5px;
+    }
+
+    .container-main {
+        height: 65dvh;
+    }
+
+    .left-parent {
+        position: absolute;
+        left: -108%;
+        transition: all 0.5s;
+        z-index: 1;
+        width: 400px;
+    }
+
+    .right-parent {
+        width: 100vw;
+    }
+
+    .right-main {
+        padding: 12px 6px 0 12px;
+    }
+
+    .right-main-header {
+        padding: 0px 12px;
+    }
+
+
+    .rectangle-artist-list {
+        display: flex;
+        /* Enable Flexbox */
+        flex-wrap: wrap;
+        /* Allow items to wrap to the next line */
+        gap: 10px;
+        /* Add spacing between items */
+        max-width: 100%;
+        /* Ensure the container doesn’t exceed the screen width */
+    }
+
+    .img-comp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 calc(50% - 10px);
+        /* Each item takes 50% of the width (2 per row, minus the gap) */
+        box-sizing: border-box;
+        /* Ensure padding/borders are included in the width */
+    }
+
+    .img-comp img {
+        object-fit: cover;
+        height: 200px;
+        width: 215px;
+        /* Make the image fill the .img-comp container */
+    }
+
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: 150px;
+        padding: 5px 15px 5px 15px;
+        font-size: 1rem;
+        margin-top: auto;
+        z-index: 6;
+    }
+
+    .footer-left {
+        margin-top: 20px;
+        width: auto;
+        justify-content: center;
+    }
+
+    .footer-center {
+        width: 90%;
+    }
+
+    .footer-right p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-right {
+        width: auto;
+    }
+
+    .duration-volume {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+
+@media (max-width: 590px) {
+
+    .center-nav svg {
+        height: 15px;
+    }
+
+    .search-bar input {
+        width: 100px;
+        font-size: 10px;
+        padding: 5px 5px;
+    }
+
+    .rectangle-artist-list {
+        display: flex;
+        /* Enable Flexbox */
+        flex-direction: column;
+        gap: 10px;
+        /* Add spacing between items */
+        max-width: 100%;
+        /* Ensure the container doesn’t exceed the screen width */
+    }
+
+
+    .img-comp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-comp img {
+        object-fit: cover;
+        height: 300px;
+        width: 350px;
+    }
+}

@@ -1,0 +1,33 @@
+/* .border {
+    border: 2px solid black;
+    margin: 3px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-content {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+} */
+
+/* .invert {
+    filter: invert(1);
+} */
+
+.pointer {
+    cursor: pointer;
+}
+
+.white-underline:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.invert {
+    filter: invert(1);
+}
