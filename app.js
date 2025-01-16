@@ -9,7 +9,7 @@ const seekBar = document.querySelector(".seekbar");
 
 let fileNames = [];
 let albumNames = [];
-let audio = new Audio(`./Songs/ANTENNA/Jugnu.mp3`);
+let audio = new Audio(`./Songs/ANTENNA/Yui - Again.mp3`);
 let currentFolder = "ANTENNA";
 
 let currentSong = "Jugnu.mp3";
