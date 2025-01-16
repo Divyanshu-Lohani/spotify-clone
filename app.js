@@ -34,7 +34,7 @@ async function main(currentFolder) {
 
 async function getSongsName(currentFolder) {
   try {
-    const response = await fetch(`/songs/${currentFolder}`);
+    const response = await fetch(`/Songs/${currentFolder}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status ${response.status}`);
     }
@@ -273,7 +273,7 @@ document.querySelector(".volume > img").addEventListener("click", () => {
 });
 
 async function getAlbumNames() {
-  const response = await fetch(`/songs`);
+  const response = await fetch(`/Songs`);
   if (!response.ok) {
     throw new Error(`HTTP error! Status ${response.status}`);
   }
@@ -284,7 +284,7 @@ async function getAlbumNames() {
   const as = doc.querySelectorAll("a");
   as.forEach((a) => {
     const href = a.getAttribute("href");
-    if (href.startsWith("/songs/")) {
+    if (href.startsWith("/Songs/")) {
       const albumName = href.split("/").pop();
       albumNames.push(albumName);
     }
@@ -293,7 +293,7 @@ async function getAlbumNames() {
   // Display albums on the screen
   await Promise.all(
     albumNames.map(async (element) => {
-      const response = await fetch(`/songs/${element}/info.json`);
+      const response = await fetch(`/Songs/${element}/info.json`);
       const json = await response.json();
 
       document.querySelector(
@@ -301,7 +301,7 @@ async function getAlbumNames() {
       ).innerHTML += `<div class="pointer hover-container">
                                     <div class="rectangle">
                                         <div class="img-comp">
-                                            <img class="cover-img" src="/songs/${element}/cover.jpeg">
+                                            <img class="cover-img" src="/Songs/${element}/cover.jpeg">
                                         </div>
                                         <h4>${json.title}</h4>
                                         <p>${json.description}</p>
